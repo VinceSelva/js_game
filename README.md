@@ -1,16 +1,23 @@
 # js_game
 JS game L3 Miage
 
-PACMAN 
--Mouvement clavier
--Map
--Fantomes
--Colision
--Score
--IA
+Projet jeu JS :
+REJNERI Clément / BOIS Clément / SELVA Vincent
+
+Nous allons réalisé un PACMAN avec :
+
+- La gestion du clavier pour les déplacements du PacMan
+- La map
+- Les fantomes
+- Les colisions entre les murs et le PacMan
+- Les colisions entre les fantomes et le PacMan
+- Le score en fonction du nombre de pièces ramassé par le PacMan
+- Une IA pour gérer le déplacement automatique des fantômes
+
+
 
 Optionnel (si nous avons du temps)
--Vie
--Sauvegarde score
--Menu
--Game Over
+- Un système de vie (3 vies)
+- Une sauvegarde du score
+- Un menu permettant de lancer le jeu, voir les scores précédent, couper le son, etc...
+- Game Over
