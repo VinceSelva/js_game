@@ -23,10 +23,30 @@ var map = [
 [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 ];
 
+window.onload = function(){
+drawMap();
 
+}
 function drawMap(){
 
 
+	var canvas = document.querySelector('#myCanvas');
+	var ctx = canvas.getContext('2d');
+
+	var lc = canvas.height;
+	var lg = canvas.width;
+
+	var lcc = lc/21;
+	var lgc = lg/19;
+
+	for (var i = 0; i < map.length; i++) {
+		for (var j = 0; i < map.length; j++) {
+			if(map[i][j] == 1)
+			{
+				console.log("salut!");
+			}
+		}
+	}
 
 
 
