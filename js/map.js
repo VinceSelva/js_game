@@ -24,9 +24,12 @@ var map = [
 ];
 
 window.onload = function(){
-drawMap();
+	
+	drawMap();
 
 }
+
+
 function drawMap(){
 
 
@@ -36,18 +39,38 @@ function drawMap(){
 	var lc = canvas.height;
 	var lg = canvas.width;
 
-	var lcc = lc/21;
-	var lgc = lg/19;
+
+	//taille tableau +1 pour afficher tous les côtés
+	var lcc = lc/22;
+	var lgc = lg/20;
+
+	var posX = 0;
+	var posY = 0;
 
 	for (var i = 0; i < map.length; i++) {
-		for (var j = 0; i < map.length; j++) {
-			if(map[i][j] == 1)
-			{
-				console.log("salut!");
+		posX+=lgc;
+			for (var j = 0; j < map.length; j++) {
+				
+
+				if(map[j][i] == 1)
+				{
+					ctx.fillStyle = "blue";
+					ctx.fillRect(posX,posY,30,30);
+					//console.log("salut!");
+				}
+
+				if(map[j][i] == 0)
+				{
+					ctx.fillStyle = "orange";
+					ctx.beginPath();
+					ctx.arc(posX + 15, posY + 15, 3, 0, 2 * Math.PI);
+					ctx.fill();
+				}
+			
+
+				posY+=lcc;
+
 			}
-		}
+			posY = 0;
 	}
-
-
-
 }
