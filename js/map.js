@@ -9,7 +9,7 @@ var map = [
 [1,1,1,1,0,1,1,1,0,1,0,1,1,1,0,1,1,1,1],
 [1,2,2,1,0,1,0,0,0,0,0,0,0,1,0,1,2,2,1],
 [1,1,1,1,0,1,0,1,1,2,1,1,0,1,0,1,1,1,1],
-[0,0,0,0,0,0,0,1,2,2,2,1,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,1,2,3,2,1,0,0,0,0,0,0,0],
 [1,1,1,1,0,1,0,1,1,2,1,1,0,1,0,1,1,1,1],
 [1,2,2,1,0,1,0,0,0,0,0,0,0,1,0,1,2,2,1],
 [1,1,1,1,0,1,0,1,1,1,1,1,0,1,0,1,1,1,1],
@@ -35,6 +35,9 @@ function drawMap(){
 
 	var canvas = document.querySelector('#myCanvas');
 	var ctx = canvas.getContext('2d');
+
+	var imageObj = new Image();
+	imageObj.src = "assets/pacman.png";
 
 	var lc = canvas.height;
 	var lg = canvas.width;
@@ -66,7 +69,11 @@ function drawMap(){
 					ctx.arc(posX + 15, posY + 15, 3, 0, 2 * Math.PI);
 					ctx.fill();
 				}
-			
+
+				if(map[j][i] == 3)
+				{
+					ctx.drawImage(imageObj, posX, posY);
+				}			
 
 				posY+=lcc;
 
