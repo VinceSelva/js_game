@@ -23,21 +23,11 @@ var map = [
 [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 ];
 
-window.onload = function(){
-	
-	drawMap();
-
-}
-
 
 function drawMap(){
 
-
 	var canvas = document.querySelector('#myCanvas');
 	var ctx = canvas.getContext('2d');
-
-	var imageObj = new Image();
-	imageObj.src = "assets/pacman.png";
 
 	var lc = canvas.height;
 	var lg = canvas.width;
@@ -58,7 +48,7 @@ function drawMap(){
 				if(map[j][i] == 1)
 				{
 					ctx.fillStyle = "blue";
-					ctx.fillRect(posX,posY,30,30);
+					ctx.fillRect(posX,posY,25,25);
 					//console.log("salut!");
 				}
 
@@ -66,14 +56,14 @@ function drawMap(){
 				{
 					ctx.fillStyle = "orange";
 					ctx.beginPath();
-					ctx.arc(posX + 15, posY + 15, 3, 0, 2 * Math.PI);
+					ctx.arc(posX + 12, posY + 12, 3, 0, 2 * Math.PI);
 					ctx.fill();
 				}
 
 				if(map[j][i] == 3)
 				{
-					ctx.drawImage(imageObj, posX, posY);
-				}			
+					//ctx.drawImage(imageObj, posX, posY);
+				}
 
 				posY+=lcc;
 
