@@ -26,19 +26,19 @@ var map = [
 
 function drawMap(){
 
-	var canvas = document.querySelector('#myCanvas');
-	var ctx = canvas.getContext('2d');
+	canvas = document.querySelector('#myCanvas');
+	ctx = canvas.getContext('2d');
 
-	var lc = canvas.height;
-	var lg = canvas.width;
+	lc = canvas.height;
+	lg = canvas.width;
 
 
 	//taille tableau +1 pour afficher tous les côtés
-	var lcc = lc/22;
-	var lgc = lg/20;
+	lcc = lc/22;
+	lgc = lg/20;
 
-	var posX = 0;
-	var posY = 0;
+	posX = 0;
+	posY = 0;
 
 	for (var i = 0; i < map.length; i++) {
 		posX+=lgc;
@@ -58,11 +58,6 @@ function drawMap(){
 					ctx.beginPath();
 					ctx.arc(posX + 12, posY + 12, 3, 0, 2 * Math.PI);
 					ctx.fill();
-				}
-
-				if(map[j][i] == 3)
-				{
-					//ctx.drawImage(imageObj, posX, posY);
 				}
 
 				posY+=lcc;

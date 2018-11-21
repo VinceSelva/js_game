@@ -1,4 +1,4 @@
-function Ghost(width, height, posX, posY, color)
+function Ghost(width, height, posX, posY)
 {
 	
 	this.width = width;
@@ -9,7 +9,7 @@ function Ghost(width, height, posX, posY, color)
 
 	this.create() = function(path)
 	{
-		
+
 	},
 
 
