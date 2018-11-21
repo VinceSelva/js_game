@@ -25,3 +25,5 @@ p{
 ul{
 	text-align: center;
 }
+
+html { overflow-y: hidden; } 
