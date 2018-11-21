@@ -1,14 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	<title></title>
+
 </head>
 <body>
+	<style>
+		@font-face {
+			font-family: "Font";
+			src: url('font/crackman.ttf');
+		}
+		@font-face {
+			font-family: "Font p";
+			src: url('font/crackman front.ttf');
+		}
+		@font-face {
+			font-family: "controls";
+			src: url('font/gamer.ttf');
+		}
+	</style>
 
-<canvas id="myCanvas" width="500" height="500"></canvas> 
+ 
+	<h1>PACMAN</h1>
+	<ul id="menu" style="display: block">
+		<li><a href="javascript:visibilite('div_texte1');">Start Games</a></li>
+		<li><a href="javascript:visibilite('div_texte2');">Controls</a></li>
+		<li><a href="javascript:visibilite('div_texte3');">About</a></li>
+	</ul>
+             
+	<div id="div_texte1" style="display:none;text-align: center;">
+
+		<canvas id="myCanvas" width="500" height="500"></canvas>
+	</div>       
+	         
+	<div id="div_texte2" style="display:none;">
+		
+		<p>Arrow keys for PACMAN</p>
+	</div>       
+	         
+	<div id="div_texte3" style="display:none;">
+		<p>TEXTE 3</p>
+	</div>
+
+
 
 <script type="text/javascript" src="js/map.js"></script>
-<script type="text/javascript" src="js/pacman.js"></script>
-<script type="text/javascript" src="js/game.js"></script>
+<script>
+	function visibilite(thingId){
+		var targetElement;
+		targetElement = document.getElementById(thingId) ;
+		if (targetElement.style.display == "none"){
+
+			targetElement.style.display = "block" ;
+		} 
+		else {
+			targetElement.style.display = "none" ;
+		}
+	}
+</script>
 </body>
 </html>
