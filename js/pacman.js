@@ -1,17 +1,18 @@
 var pacManX, pacManY;
 
-var imageObj = new Image();
+//var imageObj = new Image();
 
+var img = document.getElementById("pacmanTest");
 function drawPacman(){
 	
 	// une fois le chargement terminé
-	imageObj.onload = function()
+/*	imageObj.onload = function()
 	{
 		console.log("Image bien charge");
 	}
-
-	imageObj.src = "assets/pacman.png";
-
+    
+    imageObj.src = "assets/pacman.png";
+*/
 	posX = 0;
 	posY = 0 + lcc;
 
@@ -21,7 +22,7 @@ function drawPacman(){
 
 			if(map[j][i] == 3)
 			{
-				ctx.drawImage(imageObj, posX, posY);
+				ctx.drawImage(img, posX, posY);
 				pacManY = i;
 				pacManX = j;
 			}
@@ -44,20 +45,32 @@ function moovePacman(event){
 		case 37:
         //-Move left
         //ctx.drawImage(imageObj, pacManX -= 25, pacManY);
+        $("#pacmanTest").css({'transform': 'rotate(-180deg)'});
+
         if(map[pacManX][pacManY-1] != 1)
         {
+
+            
         	map[pacManX][pacManY] = 2;
         	map[pacManX][pacManY-1] = 3;
-        	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+           	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
         	drawMap();
+
         	drawPacman();
+
+
         }
         break;
         case 39:
         //-Move right
+                    $("#pacmanTest").css({'transform': 'rotate(0deg)'});
+
         if(map[pacManX][pacManY+1] != 1)
         {
-        	map[pacManX][pacManY] = 2;
+            
+           	map[pacManX][pacManY] = 2;
         	map[pacManX][pacManY+1] = 3;
         	ctx.clearRect(0, 0, canvas.width, canvas.height);
         	drawMap();
@@ -66,8 +79,11 @@ function moovePacman(event){
         break;
         case 38:
         //-Move up
+                    $("#pacmanTest").css({'transform': 'rotate(-90deg)'});
+
         if(map[pacManX-1][pacManY] != 1)
         {
+
         	map[pacManX][pacManY] = 2;
         	map[pacManX-1][pacManY] = 3;
         	ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -77,8 +93,11 @@ function moovePacman(event){
         break;
         case 40:
         //-Move down
+                    $("#pacmanTest").css({'transform': 'rotate(90deg)'});
+
         if(map[pacManX+1][pacManY] != 1)
         {
+
         	map[pacManX][pacManY] = 2;
         	map[pacManX+1][pacManY] = 3;
         	ctx.clearRect(0, 0, canvas.width, canvas.height);

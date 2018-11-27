@@ -1,7 +1,7 @@
 function Ghost(width, height, posX, posY)
 {
 	
-	function drawGhost(){
+	/*function drawGhost(){
 
 	var imageObj = new Image();
 	
@@ -31,7 +31,7 @@ function Ghost(width, height, posX, posY)
 			posY = 0;
 	}
 
-}
+}*/
 
 
 }
