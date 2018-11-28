@@ -1,6 +1,7 @@
 var pacManX, pacManY;
 
 let toucheappuye;
+let score = 0;
 
 function drawPacman(param1, param2, param3, param4){
 
@@ -48,13 +49,25 @@ function setKeyPress(event)
 
 function moovePacman(event){
 
+
+    console.log(score);
+
+    var resultat = document.getElementById("score");
+    resultat.innerHTML = score;
+
+    if(score >= 1910)
+    {
+        resultat.innerHTML = "OUééééééé !!!";
+    }
+
 	switch (toucheappuye) {
 		case 37:
         //-Move left
 
         if(map[pacManX][pacManY-1] != 1)
         {
-
+            if(map[pacManX][pacManY-1] == 0)
+                score += 10;
 
         	map[pacManX][pacManY] = 2;
         	map[pacManX][pacManY-1] = 3;
@@ -73,6 +86,9 @@ function moovePacman(event){
         if(map[pacManX][pacManY+1] != 1)
         {
 
+            if(map[pacManX][pacManY+1] == 0)
+                score += 10;
+
             map[pacManX][pacManY] = 2;
             map[pacManX][pacManY+1] = 3;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -85,6 +101,9 @@ function moovePacman(event){
 
         if(map[pacManX-1][pacManY] != 1)
         {
+
+            if(map[pacManX-1][pacManY] == 0)
+                score += 10;
 
         	map[pacManX][pacManY] = 2;
         	map[pacManX-1][pacManY] = 3;
@@ -99,6 +118,9 @@ function moovePacman(event){
         if(map[pacManX+1][pacManY] != 1)
         {
 
+            if(map[pacManX+1][pacManY] == 0)
+                score += 10;
+
         	map[pacManX][pacManY] = 2;
         	map[pacManX+1][pacManY] = 3;
         	ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -109,7 +131,5 @@ function moovePacman(event){
         default:
         break;
     }
-
-
 
 }
