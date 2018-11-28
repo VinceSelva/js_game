@@ -15,7 +15,7 @@ function drawPacman(param1, param2, param3, param4){
        {
             //dessin du PacMan
 
-            ctx.fillStyle = "red";
+            ctx.fillStyle = "yellow";
             ctx.beginPath();
             ctx.arc(posX + 12, posY + 12, 10, 0, 2 * Math.PI);
             ctx.fill();
@@ -39,7 +39,7 @@ function drawPacman(param1, param2, param3, param4){
 
 }
 
-window.addEventListener('keydown', moovePacman);
+window.addEventListener('keydown', setKeyPress);
 
 function setKeyPress(event)
 {
@@ -47,8 +47,6 @@ function setKeyPress(event)
 }
 
 function moovePacman(event){
-
-    toucheappuye = event.keyCode || event.which;
 
 	switch (toucheappuye) {
 		case 37:
@@ -64,7 +62,7 @@ function moovePacman(event){
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             drawMap();
-            drawPacman();
+            drawPacman(0, 20, 5, 2);
 
 
         }
@@ -79,7 +77,7 @@ function moovePacman(event){
             map[pacManX][pacManY+1] = 3;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawMap();
-            drawPacman();
+            drawPacman(24, 20, 20, 2);
         }
         break;
         case 38:
@@ -92,7 +90,7 @@ function moovePacman(event){
         	map[pacManX-1][pacManY] = 3;
         	ctx.clearRect(0, 0, canvas.width, canvas.height);
         	drawMap();
-        	drawPacman(2, 2, 20, 2)
+        	drawPacman(2, 2, 20, 2);
         }
         break;
         case 40:
@@ -105,7 +103,7 @@ function moovePacman(event){
         	map[pacManX+1][pacManY] = 3;
         	ctx.clearRect(0, 0, canvas.width, canvas.height);
         	drawMap();
-        	drawPacman(-2, -2, 20, -2)
+        	drawPacman(0, 23, 20, 23);
         }
         break;
         default:

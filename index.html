@@ -8,60 +8,56 @@
 </head>
 <body>
 
-	<button onclick="debut()">Start Game</button>
-
 	<script type="text/javascript">
 		
 		function debut(){
-			//setInterval(function(){ drawPacman(); drawMap(); moovePacman(); }, 3000);
+			setInterval(function(){ drawMap(); moovePacman(); }, 150);
 		}
 
 	</script>
 
-	<!--	<style>
-		@font-face {
+	<style>
+	@font-face {
 		font-family: "Font";
 		src: url('font/crackman.ttf');
 	}
 	@font-face {
-	font-family: "Font p";
-	src: url('font/crackman front.ttf');
-}
-@font-face {
-font-family: "controls";
-src: url('font/gamer.ttf');
-}
+		font-family: "Font p";
+		src: url('font/crackman front.ttf');
+	}
+	@font-face {
+		font-family: "controls";
+		src: url('font/gamer.ttf');
+	}
 </style>
 
 
 <h1>PACMAN</h1>
 <ul id="menu" style="display: block">
-	<li><a href="javascript:visibilite('div_texte1');">Start Games</a></li>
+	<li><a onclick="debut()" href="javascript:visibilite('div_texte1');">Start Games</a></li>
 	<li><a href="javascript:visibilite('div_texte2');">Controls</a></li>
 	<li><a href="javascript:visibilite('div_texte3');">About</a></li>
 </ul>
 
-<div id="div_texte1" style="display:none;text-align: center;"> -->
+<div id="div_texte1" style="display:none;text-align: center;">
 
 	<canvas id="myCanvas" width="500" height="500"></canvas>
-	<!-- </div>       
-	         
-	<div id="div_texte2" style="display:none;">
-		
-		<p>Arrow keys for PACMAN</p>
-	</div>       
-	         
-	<div id="div_texte3" style="display:none;">
-		<p>TEXTE 3</p>
-	</div> 
+</div>       
 
-	<img id="pacmanTest" src="assets/pacman.png"> -->
+<div id="div_texte2" style="display:none;">
 
-	<script type="text/javascript" src="js/map.js"></script>
-	<script type="text/javascript" src="js/game.js"></script>
-	<script type="text/javascript" src="js/pacman.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<!--
+	<p>Arrow keys for PACMAN</p>
+</div>       
+
+<div id="div_texte3" style="display:none;">
+	<p>TEXTE 3</p>
+</div> 
+
+<script type="text/javascript" src="js/map.js"></script>
+<script type="text/javascript" src="js/game.js"></script>
+<script type="text/javascript" src="js/pacman.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 <script>
 	
 	function visibilite(thingId){
@@ -75,6 +71,6 @@ src: url('font/gamer.ttf');
 			targetElement.style.display = "none" ;
 		}
 	}
-</script> -->
+</script>
 </body>
 </html>
