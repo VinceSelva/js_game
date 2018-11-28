@@ -1,85 +1,89 @@
 var pacManX, pacManY;
 
-//var imageObj = new Image();
+let toucheappuye;
 
-var img = document.getElementById("pacmanTest");
-function drawPacman(){
-	
-	// une fois le chargement terminé
-/*	imageObj.onload = function()
-	{
-		console.log("Image bien charge");
-	}
-    
-    imageObj.src = "assets/pacman.png";
-*/
-	posX = 0;
-	posY = 0 + lcc;
+function drawPacman(param1, param2, param3, param4){
 
-	for (var i = 0; i < map.length; i++) {
-		posX+=lgc;
-		for (var j = 0; j < map.length; j++) {
+    posX = 0;
+    posY = 0 + lcc;
 
-			if(map[j][i] == 3)
-			{
-				ctx.drawImage(img, posX, posY);
-				pacManY = i;
-				pacManX = j;
-			}
+    for (var i = 0; i < map.length; i++) {
+      posX+=lgc;
+      for (var j = 0; j < map.length; j++) {
 
-			posY+=lcc;
+       if(map[j][i] == 3)
+       {
+            //dessin du PacMan
 
-		}
-		posY = 0;
-	}
+            ctx.fillStyle = "red";
+            ctx.beginPath();
+            ctx.arc(posX + 12, posY + 12, 10, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.fillStyle = "grey";
+            ctx.moveTo(posX+12, posY+12);
+            ctx.lineTo(posX+param1, posY+param2);
+            ctx.lineTo(posX+param3, posY+param4);
+            ctx.fill();
+
+
+            pacManY = i;
+            pacManX = j;
+        }
+
+        posY+=lcc;
+
+    }
+    posY = 0;
+}
 
 }
 
 window.addEventListener('keydown', moovePacman);
 
+function setKeyPress(event)
+{
+    toucheappuye = event.keyCode || event.which;
+}
+
 function moovePacman(event){
 
-	var key = event.keyCode || event.which;
+    toucheappuye = event.keyCode || event.which;
 
-	switch (key) {
+	switch (toucheappuye) {
 		case 37:
         //-Move left
-        //ctx.drawImage(imageObj, pacManX -= 25, pacManY);
-        $("#pacmanTest").css({'transform': 'rotate(-180deg)'});
 
         if(map[pacManX][pacManY-1] != 1)
         {
 
-            
+
         	map[pacManX][pacManY] = 2;
         	map[pacManX][pacManY-1] = 3;
 
-           	ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        	drawMap();
-
-        	drawPacman();
+            drawMap();
+            drawPacman();
 
 
         }
         break;
         case 39:
-        //-Move right
-                    $("#pacmanTest").css({'transform': 'rotate(0deg)'});
+        //move right
 
         if(map[pacManX][pacManY+1] != 1)
         {
-            
-           	map[pacManX][pacManY] = 2;
-        	map[pacManX][pacManY+1] = 3;
-        	ctx.clearRect(0, 0, canvas.width, canvas.height);
-        	drawMap();
-        	drawPacman();
+
+            map[pacManX][pacManY] = 2;
+            map[pacManX][pacManY+1] = 3;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawMap();
+            drawPacman();
         }
         break;
         case 38:
         //-Move up
-                    $("#pacmanTest").css({'transform': 'rotate(-90deg)'});
 
         if(map[pacManX-1][pacManY] != 1)
         {
@@ -88,12 +92,11 @@ function moovePacman(event){
         	map[pacManX-1][pacManY] = 3;
         	ctx.clearRect(0, 0, canvas.width, canvas.height);
         	drawMap();
-        	drawPacman();
+        	drawPacman(4, 4, 20, 0);
         }
         break;
         case 40:
         //-Move down
-                    $("#pacmanTest").css({'transform': 'rotate(90deg)'});
 
         if(map[pacManX+1][pacManY] != 1)
         {
@@ -102,7 +105,7 @@ function moovePacman(event){
         	map[pacManX+1][pacManY] = 3;
         	ctx.clearRect(0, 0, canvas.width, canvas.height);
         	drawMap();
-        	drawPacman();
+        	drawPacman(20, 20, 0, 30);
         }
         break;
         default:
