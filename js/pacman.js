@@ -20,7 +20,7 @@ function drawPacman(param1, param2, param3, param4){
             ctx.arc(posX + 12, posY + 12, 10, 0, 2 * Math.PI);
             ctx.fill();
             ctx.beginPath();
-            ctx.fillStyle = "grey";
+            ctx.fillStyle = "black";
             ctx.moveTo(posX+12, posY+12);
             ctx.lineTo(posX+param1, posY+param2);
             ctx.lineTo(posX+param3, posY+param4);
@@ -92,7 +92,7 @@ function moovePacman(event){
         	map[pacManX-1][pacManY] = 3;
         	ctx.clearRect(0, 0, canvas.width, canvas.height);
         	drawMap();
-        	drawPacman(4, 4, 20, 0);
+        	drawPacman(2, 2, 20, 2)
         }
         break;
         case 40:
@@ -105,7 +105,7 @@ function moovePacman(event){
         	map[pacManX+1][pacManY] = 3;
         	ctx.clearRect(0, 0, canvas.width, canvas.height);
         	drawMap();
-        	drawPacman(20, 20, 0, 30);
+        	drawPacman(-2, -2, 20, -2)
         }
         break;
         default:
