@@ -21,3 +21,12 @@ Optionnel (si nous avons du temps)
 - Une sauvegarde du score
 - Un menu permettant de lancer le jeu, voir les scores précédent, couper le son, etc...
 - Game Over
+
+Nous avons réalisé sur le pacman :
+-la map
+-les collisions
+-les déplacements du pacman
+-le score
+-un menu
+-le son (en cours)
+-début IA (en cours sur papier)
