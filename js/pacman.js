@@ -3,12 +3,6 @@ var pacManX, pacManY;
 let toucheappuye;
 let score = 0;
 
-var audio = document.getElementById("myAudio");
-
-function audioSound(){
-        audio.play();
-}
-
 function drawPacman(param1, param2, param3, param4){
     posX = 0;
     posY = 0 + lcc;
@@ -54,8 +48,7 @@ function setKeyPress(event)
 
 function moovePacman(event){
 
-
-    console.log(score);
+    //console.log(score);
 
     var resultat = document.getElementById("score");
     resultat.innerHTML = score;
@@ -80,7 +73,7 @@ function moovePacman(event){
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             drawMap();
-            drawPacman(0, 20, 5, 2);
+            drawPacman(0, 20, 3, 2);
 
 
         }

@@ -1,88 +1,91 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8"/>
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	<title></title>
-
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title></title>
 </head>
+
 <body>
-<audio id="myAudio">
-  <source src="assets/pacman_sound.mp3" type="audio/mpeg">
-</audio>
-<div id="couperSon" onclick="cutSound()">
-	<img src="assets/couper_son.png">
-</div>
-	<script type="text/javascript">
-		function cutSound(){
-		    audio.pause();
-		    audio.currentTime = 0;
-		}
-		
-		function debut(){
-			setInterval(function(){ drawMap(); moovePacman(); drawGhost();}, 150);
-		}
+    <audio id="audioPlayer">
+        <source src="assets/pacmanvariation.wav" type="audio/mpeg">
+    </audio>
 
-	</script>
+    <script type="text/javascript">
+       function debut() {
 
-	<style>
-	@font-face {
-		font-family: "Font";
-		src: url('font/crackman.ttf');
-	}
-	@font-face {
-		font-family: "Font p";
-		src: url('font/crackman front.ttf');
-	}
-	@font-face {
-		font-family: "controls";
-		src: url('font/gamer.ttf');
-	}
-</style>
+       	$("#hide").click(function(){
+			$("#hideOnClick").hide();
+	       	$("#hideOnClick2").hide();
+	       	$("#hideOnClick3").hide();
+		});
+       	
+            setInterval(function() {
+                drawMap();
+                moovePacman();
+                drawGhost();
+            }, 150);
+        }
+    </script>
 
+    <style>
+        @font-face {
+            font-family: "Font";
+            src: url('font/crackman.ttf');
+        }
+        
+        @font-face {
+            font-family: "Font p";
+            src: url('font/crackman front.ttf');
+        }
+        
+        @font-face {
+            font-family: "controls";
+            src: url('font/gamer.ttf');
+        }
+    </style>
 
-<h1>PACMAN</h1>
-<ul id="menu" style="display: block">
-	<li><a onclick="debut()" href="javascript:visibilite('div_texte1');">Start Games</a></li>
-	<li><a href="javascript:visibilite('div_texte2');">Controls</a></li>
-	<li><a href="javascript:visibilite('div_texte3');">About</a></li>
-</ul>
+    <h1>PACMAN</h1>
+    <ul id="menu" style="display: block">
+    	<div id="hide">
+    		<li><a id="hideOnClick3" onclick="debut()" href="javascript:visibilite('div_texte1');">Start Games</a></li>
+	        <li><a id="hideOnClick" onclick="debut()" href="javascript:visibilite('div_texte2');">Controls</a></li>
+	        <li><a id="hideOnClick2" onclick="debut()" href="javascript:visibilite('div_texte3');">About</a></li>
+    	</div>
+        
+        <img src="assets/play_pause.png" width="50" height="50" class="control" onclick="play('audioPlayer', this)">
+    	<img src="assets/couper_son.png" width="50" height="50" class="control" onclick="resume('audioPlayer')">
+    </ul>
 
-<div id="div_texte1" style="display:none;text-align: center;">
+    <div id="div_texte1" style="display:none;text-align: center;">
 
-	<canvas id="myCanvas" width="500" height="500"></canvas>
-</div>  
+        <canvas id="myCanvas" width="500" height="500"></canvas>
+    </div>
 
-<h1 id="score"></h1>     
+    <h1 id="score"></h1>
 
-<div id="div_texte2" style="display:none;">
+    <div id="div_texte2" style="display:none;">
+        <p>Arrow keys for PACMAN</p>
+        <p>UP</p>
+        <p>DOWN</p>
+        <p>LEFT</p>
+        <p>RIGHT</p>
+    </div>
 
-	<p>Arrow keys for PACMAN</p>
-</div>       
+    <div id="div_texte3" style="display:none;">
+        <p>PACMAN JS GAME is a game created by three students :</p>
+    	<p>BOIS Clement</p>
+    	<p>REJNERI Clement</p>
+    	<p>SELVA Vincent</p>
+    </div>
 
-<div id="div_texte3" style="display:none;">
-	<p>TEXTE 3</p>
-</div> 
-
-<script type="text/javascript" src="js/ghost.js"></script>
-<script type="text/javascript" src="js/map.js"></script>
-<script type="text/javascript" src="js/game.js"></script>
-<script type="text/javascript" src="js/pacman.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-<script>
-	
-	function visibilite(thingId){
-		var targetElement;
-		targetElement = document.getElementById(thingId) ;
-		if (targetElement.style.display == "none"){
-
-			targetElement.style.display = "block" ;
-		} 
-		else {
-			targetElement.style.display = "none" ;
-		}
-	}
-</script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/ghost.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/pacman.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </body>
+
 </html>
