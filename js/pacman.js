@@ -52,7 +52,7 @@ function moovePacman(event){
 
     var resultat = document.getElementById("score");
     resultat.innerHTML = score;
-
+//
     if(score >= 1870)
     {
         resultat.innerHTML = "Gagné !";
@@ -70,12 +70,14 @@ function moovePacman(event){
         	map[pacManX][pacManY] = 2;
         	map[pacManX][pacManY-1] = 3;
 
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            //ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            drawMap();
-            drawPacman(0, 20, 3, 2);
-
-
+            //drawMap();
+            drawPacman(0, 20, 5, 2);
+        }
+        else if(map[pacManX][pacManY-1] == 1)
+        {
+            drawPacman(0, 20, 5, 2);
         }
         break;
         case 39:
@@ -89,8 +91,12 @@ function moovePacman(event){
 
             map[pacManX][pacManY] = 2;
             map[pacManX][pacManY+1] = 3;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawMap();
+            //ctx.clearRect(0, 0, canvas.width, canvas.height);
+            //drawMap();
+            drawPacman(24, 20, 20, 2);
+        }
+        else if(map[pacManX][pacManY+1] == 1)
+        {
             drawPacman(24, 20, 20, 2);
         }
         break;
@@ -105,9 +111,13 @@ function moovePacman(event){
 
         	map[pacManX][pacManY] = 2;
         	map[pacManX-1][pacManY] = 3;
-        	ctx.clearRect(0, 0, canvas.width, canvas.height);
-        	drawMap();
+        	//ctx.clearRect(0, 0, canvas.width, canvas.height);
+        	//drawMap();
         	drawPacman(2, 2, 20, 2);
+        }
+        else if(map[pacManX-1][pacManY] == 1)
+        {
+            drawPacman(2, 2, 20, 2);
         }
         break;
         case 40:
@@ -121,9 +131,13 @@ function moovePacman(event){
 
         	map[pacManX][pacManY] = 2;
         	map[pacManX+1][pacManY] = 3;
-        	ctx.clearRect(0, 0, canvas.width, canvas.height);
-        	drawMap();
+        	//ctx.clearRect(0, 0, canvas.width, canvas.height);
+        	//drawMap();
         	drawPacman(0, 23, 20, 23);
+        }
+        else if(map[pacManX+1][pacManY] == 1)
+        {
+            drawPacman(0, 23, 20, 23);
         }
         break;
         default:
