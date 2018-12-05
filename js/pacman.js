@@ -60,9 +60,9 @@ function moovePacman(event){
     var resultat = document.getElementById("score");
     resultat.innerHTML = score;
 
-    if(score >= 1910)
+    if(score >= 1870)
     {
-        resultat.innerHTML = "OUééééééé !!!";
+        resultat.innerHTML = "Gagné !";
     }
 
 	switch (toucheappuye) {
