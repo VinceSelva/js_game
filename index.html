@@ -7,8 +7,17 @@
 
 </head>
 <body>
-
+<audio id="myAudio">
+  <source src="assets/pacman_sound.mp3" type="audio/mpeg">
+</audio>
+<div id="couperSon" onclick="cutSound()">
+	<img src="assets/couper_son.png">
+</div>
 	<script type="text/javascript">
+		function cutSound(){
+		    audio.pause();
+		    audio.currentTime = 0;
+		}
 		
 		function debut(){
 			setInterval(function(){ drawMap(); moovePacman();}, 150);

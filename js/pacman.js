@@ -3,8 +3,13 @@ var pacManX, pacManY;
 let toucheappuye;
 let score = 0;
 
-function drawPacman(param1, param2, param3, param4){
+var audio = document.getElementById("myAudio");
 
+function audioSound(){
+        audio.play();
+}
+
+function drawPacman(param1, param2, param3, param4){
     posX = 0;
     posY = 0 + lcc;
 
