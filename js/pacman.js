@@ -73,7 +73,7 @@ function moovePacman(event){
             //ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             //drawMap();
-            drawPacman(0, 20, 5, 2);
+            drawPacman(0, 20, 3, 2);
         }
         else if(map[pacManX][pacManY-1] == 1)
         {
