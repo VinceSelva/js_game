@@ -22,10 +22,12 @@
 		});
        	
             setInterval(function() {
-            	ctx.clearRect(0, 0, canvas.width, canvas.height);
-                drawMap();
-                moovePacman();
-                drawGhost();
+            	ctx.clearRect(0, 0, canvas.width, canvas.height); 
+            	drawMap();
+            	drawGhost(); 
+            	Etat(determinerEtat()); 
+            	moovePacman(); 
+            	drawMap();
             }, 150);
         }
     </script>

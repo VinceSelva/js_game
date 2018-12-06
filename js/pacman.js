@@ -61,19 +61,27 @@ function moovePacman(event){
 	switch (toucheappuye) {
 		case 37:
         //-Move left
-
         if(map[pacManX][pacManY-1] != 1)
         {
             if(map[pacManX][pacManY-1] == 0)
                 score += 10;
 
+            if(map[pacManX][pacManY-1] == 5)
+            {
+                map[pacManX][pacManY] = 2;
+                map[10][18] = 3;
+
+                drawPacman(0, 20, 3, 2);
+            }
+            else
+            {
         	map[pacManX][pacManY] = 2;
         	map[pacManX][pacManY-1] = 3;
 
-            //ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            //drawMap();
             drawPacman(0, 20, 3, 2);
+            }
+
+            map[10][18] = 6;
         }
         else if(map[pacManX][pacManY-1] == 1)
         {
@@ -85,15 +93,25 @@ function moovePacman(event){
 
         if(map[pacManX][pacManY+1] != 1)
         {
-
             if(map[pacManX][pacManY+1] == 0)
                 score += 10;
 
+            if(map[pacManX][pacManY+1] == 6)
+            {
+                map[pacManX][pacManY] = 2;
+                map[10][0] = 3;
+
+                drawPacman(24, 20, 20, 2);
+            }
+            else
+            {
             map[pacManX][pacManY] = 2;
             map[pacManX][pacManY+1] = 3;
-            //ctx.clearRect(0, 0, canvas.width, canvas.height);
-            //drawMap();
+
             drawPacman(24, 20, 20, 2);
+            }
+
+            map[10][0] = 5;
         }
         else if(map[pacManX][pacManY+1] == 1)
         {
@@ -141,6 +159,7 @@ function moovePacman(event){
         }
         break;
         default:
+            drawPacman(0, 0, 0, 0);
         break;
     }
 
