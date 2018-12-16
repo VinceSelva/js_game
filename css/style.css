@@ -1,0 +1,34 @@
+@font-face {
+	font-family: "Font";
+	src: url('font/crackman.ttf');
+}
+
+h1{
+	font-family: "Font";
+	text-align: center;
+	color: blue;
+	font-size: 80px;
+}
+a{
+	font-family: "Font p";
+	color:white;
+	font-size: 30px;
+	text-decoration: none;
+}
+body{
+	background: black;
+}
+p{
+	font-family: "controls";
+	color:white;
+}
+ul{
+	text-align: center;
+}
+
+html { overflow-y: hidden; } 
+
+#score{
+	margin-left: 800px;
+	margin-top: -300px;
+}
