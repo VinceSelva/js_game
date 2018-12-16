@@ -32,7 +32,6 @@ function drawMap(){
 	lc = canvas.height;
 	lg = canvas.width;
 
-
 	//taille tableau +1 pour afficher tous les côtés
 	lcc = lc/22;
 	lgc = lg/20;

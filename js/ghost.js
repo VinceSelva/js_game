@@ -1,5 +1,4 @@
 	var imageObj = new Image();
-	let posGhostX, posGhostY;
 
 	imageObj.src = "assets/fantome_rouge.png";
 	
