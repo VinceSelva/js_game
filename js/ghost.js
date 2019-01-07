@@ -1,5 +1,6 @@
 	var imageObj = new Image();
 	let posGhostX, posGhostY;
+	let posPacManActuX, posPacManActuY;
 
 	imageObj.src = "assets/fantome_rouge.png";
 	
@@ -35,35 +36,39 @@
 
 	function determinerEtat()
 	{
-		if(pacManX <= posGhostX)
+		for (var i = 0; i < map.length; i++) {
+			for (var j = 0; j < map.length; j++) {
+
+				if(map[j][i] == 3)
+				{
+					posPacManActuY = j;
+					posPacManActuX = i;
+				}
+
+			}
+		}
+
+		if(posPacManActuY < posGhostY)
 		{
-			if(pacManY <= posGhostY)
+			if(posPacManActuX < posGhostX)
 			{
 				return 1; // En haut a gauche
 			}
-		}
-
-		if(pacManX >= posGhostX)
-		{
-			if(pacManY >= posGhostY)
+			else if(posPacManActuX > posGhostX)
 			{
-				return 2; // En bas a droite
+				return 4; // En haut a droite
 			}
 		}
 
-		if(pacManX <= posGhostX) 
+		else if(posPacManActuY > posGhostY) 
 		{
-			if(pacManY >= posGhostY) 
+			if(posPacManActuX < posGhostX) 
 			{
 				return 3; // En bas a gauche
 			}
-		}
-
-		if(pacManX >= posGhostX)
-		{
-			if(pacManY <= posGhostY)
+			else if(posPacManActuX > posGhostX) 
 			{
-				return 4; // En haut a droite
+				return 2; // En bas a droite
 			}
 		}
 
