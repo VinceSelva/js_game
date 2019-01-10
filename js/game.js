@@ -1,4 +1,4 @@
-let posX, posY, posGhostX, posGhostY, targetElement, canvas, ctx, lc, lg, lcc, lgc, eventKey, player;
+let posX, posY, targetElement, canvas, ctx, lc, lg, lcc, lgc, eventKey, player;
 
 window.onload = function (){
 	

@@ -42,7 +42,7 @@
 				if(map[j][i] == 3)
 				{
 					posPacManActuY = j;
-					posPacManActuX = i;
+					posPacManActuX = i; 
 				}
 
 			}
@@ -81,17 +81,17 @@
 			case 1:
 			console.log('Mode en haut à gauche');
 
-			if(map[posGhostY - 1][posGhostX] == 0 && posGhostY > pacManY) // Allez en haut
+			if(map[posGhostY - 1][posGhostX] == 0) // Allez en haut
 			{
 				map[posGhostY - 1][posGhostX] = 4;
 				map[posGhostY][posGhostX] = 0;
 			}
-			else if(map[posGhostY][posGhostX - 1] == 0 && posGhostX > pacManX) // Allez à gauche
+			else if(map[posGhostY][posGhostX - 1] == 0) // Allez à gauche
 			{
 				map[posGhostY][posGhostX - 1] = 4;
 				map[posGhostY][posGhostX] = 0;
 			}
-			else if(map[posGhostY][posGhostX + 1] == 0 && posGhostX > pacManX) // Allez à droite dans le dernier des cas
+			else if(map[posGhostY][posGhostX + 1] == 0) // Allez à droite dans le dernier des cas
 			{
 				map[posGhostY][posGhostX + 1] = 4;
 				map[posGhostY][posGhostX] = 0;	
@@ -108,22 +108,22 @@
 			console.log('Mode en bas a droite');
 
 
-			if(map[posGhostY + 1][posGhostX] == 0 && posGhostY < pacManY) // Allez en bas
+			if(map[posGhostY + 1][posGhostX] == 0) // Allez en bas
 			{
 				map[posGhostY + 1][posGhostX] = 4;
 				map[posGhostY][posGhostX] = 0;	
 			}
-			else if(map[posGhostY][posGhostX + 1] == 0 && posGhostX < pacManX) // Allez à droite dans le dernier des cas
+			else if(map[posGhostY][posGhostX + 1] == 0) // Allez à droite dans le dernier des cas
 			{
 				map[posGhostY][posGhostX + 1] = 4;
 				map[posGhostY][posGhostX] = 0;	
 			}
-			else if(map[posGhostY][posGhostX - 1] == 0 && posGhostX < pacManX) // Allez à gauche
+			else if(map[posGhostY][posGhostX - 1] == 0) // Allez à gauche
 			{
 				map[posGhostY][posGhostX - 1] = 4;
 				map[posGhostY][posGhostX] = 0;
 			}
-			else if(map[posGhostY - 1][posGhostX] == 0 && posGhostY > pacManY) // Allez en haut
+			else if(map[posGhostY - 1][posGhostX] == 0) // Allez en haut
 			{
 				map[posGhostY - 1][posGhostX] = 4;
 				map[posGhostY][posGhostX] = 0;
@@ -134,22 +134,22 @@
 			case 3:
 			console.log('Mode en bas a gauche');
 
-			if(map[posGhostY + 1][posGhostX] == 0 && posGhostY < pacManY) // Allez en bas
+			if(map[posGhostY + 1][posGhostX] == 0) // Allez en bas
 			{
 				map[posGhostY + 1][posGhostX] = 4;
 				map[posGhostY][posGhostX] = 0;	
 			}
-			else if(map[posGhostY][posGhostX - 1] == 0 && posGhostX > pacManX) // Allez à gauche
+			else if(map[posGhostY][posGhostX - 1] == 0) // Allez à gauche
 			{
 				map[posGhostY][posGhostX - 1] = 4;
 				map[posGhostY][posGhostX] = 0;
 			}
-			else if(map[posGhostY][posGhostX + 1] == 0 && posGhostX > pacManX) // Allez à droite dans le dernier des cas
+			else if(map[posGhostY][posGhostX + 1] == 0) // Allez à droite dans le dernier des cas
 			{
 				map[posGhostY][posGhostX + 1] = 4;
 				map[posGhostY][posGhostX] = 0;	
 			}
-			else if(map[posGhostY - 1][posGhostX] == 0 && posGhostY > pacManY) // Allez en haut
+			else if(map[posGhostY - 1][posGhostX] == 0) // Allez en haut
 			{
 				map[posGhostY - 1][posGhostX] = 4;
 				map[posGhostY][posGhostX] = 0;
@@ -160,17 +160,17 @@
 			case 4:
 			console.log('Mode en haut a droite');
 
-			if(map[posGhostY - 1][posGhostX] == 0 && posGhostY > pacManY) // Allez en haut
+			if(map[posGhostY - 1][posGhostX] == 0) // Allez en haut
 			{
 				map[posGhostY - 1][posGhostX] = 4;
 				map[posGhostY][posGhostX] = 0;
 			}
-			else if(map[posGhostY][posGhostX + 1] == 0 && posGhostX < pacManX) // Allez à droite dans le dernier des cas
+			else if(map[posGhostY][posGhostX + 1] == 0) // Allez à droite dans le dernier des cas
 			{
 				map[posGhostY][posGhostX + 1] = 4;
 				map[posGhostY][posGhostX] = 0;	
 			}
-			else if(map[posGhostY][posGhostX - 1] == 0 && posGhostX < pacManX) // Allez à gauche
+			else if(map[posGhostY][posGhostX - 1] == 0) // Allez à gauche
 			{
 				map[posGhostY][posGhostX - 1] = 4;
 				map[posGhostY][posGhostX] = 0;
