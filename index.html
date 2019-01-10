@@ -20,7 +20,7 @@
     <script type="text/javascript">
        function debut() {
 
-        var vid = document.getElementById("musique2"); 
+        var musiqueChomp = document.getElementById("musique2"); 
         var audioPlayer = document.getElementById("audioPlayer"); 
         
         function pauseVid() { 
@@ -28,7 +28,7 @@
         }
 
         function playVid() { 
-            vid.play(); 
+            musiqueChomp.play(); 
         } 
 
         pauseVid();
@@ -78,7 +78,7 @@
     	</div>
         
         <img src="assets/play_pause.png" width="50" height="50" class="control" onclick="play('audioPlayer', this)">
-    	<img src="assets/couper_son.png" width="50" height="50" class="control" onclick="resume('audioPlayer')">
+    	<img src="assets/couper_son.png" width="50" height="50" class="control" onclick="resume('audioPlayer'); resume('musique2');">
     </ul>
 
     <div id="div_texte1" style="display:none;text-align: center;">
