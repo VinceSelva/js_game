@@ -14,7 +14,6 @@ function drawPacman(param1, param2, param3, param4){
        if(map[j][i] == 3)
        {
             //dessin du PacMan
-
             ctx.fillStyle = "yellow";
             ctx.beginPath();
             ctx.arc(posX + 12, posY + 12, 10, 0, 2 * Math.PI);
@@ -25,7 +24,6 @@ function drawPacman(param1, param2, param3, param4){
             ctx.lineTo(posX+param1, posY+param2);
             ctx.lineTo(posX+param3, posY+param4);
             ctx.fill();
-
 
             pacManY = i;
             pacManX = j;
@@ -48,15 +46,21 @@ function setKeyPress(event)
 
 function moovePacman(event){
 
-    //console.log(score);
-
     var resultat = document.getElementById("score");
     resultat.innerHTML = score;
-//
-    if(score >= 1870)
-    {
+
+    if(score >= 2240)
+
+    {   
         resultat.innerHTML = "Gagné !";
+        resultat.style.position = "absolute";
+
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, 1500, 1500);   
+        ctx.style.position = "absolute";
     }
+    
 
 	switch (toucheappuye) {
 		case 37:
@@ -65,27 +69,29 @@ function moovePacman(event){
         {
             if(map[pacManX][pacManY-1] == 0)
                 score += 10;
+            if(map[pacManX][pacManY-1] == 7)
+                score += 100;
 
             if(map[pacManX][pacManY-1] == 5)
             {
                 map[pacManX][pacManY] = 2;
                 map[10][18] = 3;
 
-                drawPacman(0, 20, 3, 2);
+                drawPacman(0, 20, 2, 3);
             }
             else
             {
-        	map[pacManX][pacManY] = 2;
-        	map[pacManX][pacManY-1] = 3;
+            	map[pacManX][pacManY] = 2;
+            	map[pacManX][pacManY-1] = 3;
 
-            drawPacman(0, 20, 3, 2);
+                drawPacman(0, 20, 2, 3);
             }
 
             map[10][18] = 6;
         }
         else if(map[pacManX][pacManY-1] == 1)
         {
-            drawPacman(0, 20, 5, 2);
+            drawPacman(0, 20, 2, 3);
         }
         break;
         case 39:
@@ -95,6 +101,9 @@ function moovePacman(event){
         {
             if(map[pacManX][pacManY+1] == 0)
                 score += 10;
+            if(map[pacManX][pacManY+1] == 7)
+                score += 100;
+
 
             if(map[pacManX][pacManY+1] == 6)
             {
@@ -127,6 +136,9 @@ function moovePacman(event){
             if(map[pacManX-1][pacManY] == 0)
                 score += 10;
 
+            if(map[pacManX-1][pacManY] == 7)
+                score += 100;
+
         	map[pacManX][pacManY] = 2;
         	map[pacManX-1][pacManY] = 3;
         	//ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -146,6 +158,8 @@ function moovePacman(event){
 
             if(map[pacManX+1][pacManY] == 0)
                 score += 10;
+            if(map[pacManX+1][pacManY] == 7)
+                score += 100;
 
         	map[pacManX][pacManY] = 2;
         	map[pacManX+1][pacManY] = 3;

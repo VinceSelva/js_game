@@ -7,13 +7,32 @@
     <title></title>
 </head>
 
-<body>
-    <audio id="audioPlayer">
-        <source src="assets/pacmanvariation.wav" type="audio/mpeg">
+<body>   
+
+    <audio id="audioPlayer" loop="loop" autoplay="autoplay">
+        <source src="assets/pacman_sound.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="musique2"  loop="loop">
+            <source src="assets/pacman_chomp.wav" type="audio/mpeg">
     </audio>
 
     <script type="text/javascript">
        function debut() {
+
+        var vid = document.getElementById("musique2"); 
+        var audioPlayer = document.getElementById("audioPlayer"); 
+        
+        function pauseVid() { 
+            audioPlayer.pause(); 
+        }
+
+        function playVid() { 
+            vid.play(); 
+        } 
+
+        pauseVid();
+        playVid();
 
        	$("#hide").click(function(){
 			$("#hideOnClick").hide();
@@ -21,14 +40,14 @@
 	       	$("#hideOnClick3").hide();
 		});
        	
-            setInterval(function() {
-            	ctx.clearRect(0, 0, canvas.width, canvas.height); 
-            	drawMap();
-            	drawGhost(); 
-            	Etat(determinerEtat()); 
-            	moovePacman(); 
-            	drawMap();
-            }, 150);
+        setInterval(function() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height); 
+                drawMap();
+                drawGhost(); 
+                Etat(determinerEtat()); 
+                moovePacman(); 
+                drawMap();
+            }, 150);    
 
         }
     </script>
