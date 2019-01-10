@@ -46,6 +46,7 @@ function setKeyPress(event)
 
 function moovePacman(event){
 
+    var shootingStar = document.getElementById("shootingStar");
     var resultat = document.getElementById("score");
     resultat.innerHTML = score;
 
@@ -67,11 +68,15 @@ function moovePacman(event){
         //-Move left
         if(map[pacManX][pacManY-1] != 1)
         {
-            if(map[pacManX][pacManY-1] == 0)
+            if(map[pacManX][pacManY-1] == 0){
+                musique2.play();
                 score += 10;
+            }
         
-            if(map[pacManX][pacManY-1] == 7)
+            if(map[pacManX][pacManY-1] == 7){
+                shootingStar.play();
                 score += 100;
+            }
 
             if(map[pacManX][pacManY-1] == 4)
             {
@@ -111,10 +116,14 @@ function moovePacman(event){
 
         if(map[pacManX][pacManY+1] != 1)
         {
-            if(map[pacManX][pacManY+1] == 0)
+            if(map[pacManX][pacManY+1] == 0){
+                musique2.play();
                 score += 10;
-            if(map[pacManX][pacManY+1] == 7)
+            }
+            if(map[pacManX][pacManY+1] == 7){
+                shootingStar.play();
                 score += 100;
+            }
 
             if(map[pacManX][pacManY+1] == 4)
             {
@@ -155,11 +164,15 @@ function moovePacman(event){
         if(map[pacManX-1][pacManY] != 1)
         {
 
-            if(map[pacManX-1][pacManY] == 0)
+            if(map[pacManX-1][pacManY] == 0){
+                musique2.play();
                 score += 10;
+            }
 
-            if(map[pacManX-1][pacManY] == 7)
+            if(map[pacManX-1][pacManY] == 7){
+                shootingStar.play();
                 score += 100;
+            }
 
             if(map[pacManX-1][pacManY] == 4)
             {
@@ -189,10 +202,14 @@ function moovePacman(event){
         if(map[pacManX+1][pacManY] != 1)
         {
 
-            if(map[pacManX+1][pacManY] == 0)
+            if(map[pacManX+1][pacManY] == 0){
+                musique2.play();
                 score += 10;
-            if(map[pacManX+1][pacManY] == 7)
+            }
+            if(map[pacManX+1][pacManY] == 7){
+                shootingStar.play();
                 score += 100;
+            }
 
             if(map[pacManX+1][pacManY] == 4)
             {
