@@ -69,8 +69,20 @@ function moovePacman(event){
         {
             if(map[pacManX][pacManY-1] == 0)
                 score += 10;
+        
             if(map[pacManX][pacManY-1] == 7)
                 score += 100;
+
+            if(map[pacManX][pacManY-1] == 4)
+            {
+                resultat.innerHTML = "Game over !";
+                resultat.style.position = "absolute";
+
+                ctx.beginPath();
+                ctx.fillStyle = "black";
+                ctx.fillRect(0, 0, 1500, 1500);   
+                ctx.style.position = "absolute"; 
+            }
 
             if(map[pacManX][pacManY-1] == 5)
             {
@@ -104,6 +116,16 @@ function moovePacman(event){
             if(map[pacManX][pacManY+1] == 7)
                 score += 100;
 
+            if(map[pacManX][pacManY+1] == 4)
+            {
+                    resultat.innerHTML = "Game over !";
+                    resultat.style.position = "absolute";
+
+                    ctx.beginPath();
+                    ctx.fillStyle = "black";
+                    ctx.fillRect(0, 0, 1500, 1500);   
+                    ctx.style.position = "absolute"; 
+            }
 
             if(map[pacManX][pacManY+1] == 6)
             {
@@ -139,6 +161,17 @@ function moovePacman(event){
             if(map[pacManX-1][pacManY] == 7)
                 score += 100;
 
+            if(map[pacManX-1][pacManY] == 4)
+            {
+                resultat.innerHTML = "Game over !";
+                resultat.style.position = "absolute";
+
+                ctx.beginPath();
+                ctx.fillStyle = "black";
+                ctx.fillRect(0, 0, 1500, 1500);   
+                ctx.style.position = "absolute"; 
+            }
+
         	map[pacManX][pacManY] = 2;
         	map[pacManX-1][pacManY] = 3;
         	//ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -161,6 +194,16 @@ function moovePacman(event){
             if(map[pacManX+1][pacManY] == 7)
                 score += 100;
 
+            if(map[pacManX+1][pacManY] == 4)
+            {
+                resultat.innerHTML = "Game over !";
+                resultat.style.position = "absolute";
+
+                ctx.beginPath();
+                ctx.fillStyle = "black";
+                ctx.fillRect(0, 0, 1500, 1500);   
+                ctx.style.position = "absolute"; 
+            }
         	map[pacManX][pacManY] = 2;
         	map[pacManX+1][pacManY] = 3;
         	//ctx.clearRect(0, 0, canvas.width, canvas.height);
